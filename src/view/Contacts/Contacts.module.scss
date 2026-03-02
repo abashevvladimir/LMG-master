@@ -1,0 +1,150 @@
+.map{
+  background: url("../../shared/assests/e5c901db8615b6428f1420660be4e631.png") center center no-repeat;
+  background-size: cover;
+  height: 925px;
+  margin-top: 20px;
+  position: relative;
+
+  @include media-max(1100px){
+    height: 1400px;
+    background-position: -700px
+  }
+}
+
+.social{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 48px 120px;
+  padding-block: 48px;
+  @include responsive-sizing("padding-inline", 8, 120, 360,1440);
+  border-radius: 0px 3px 32px 0px;
+  background: linear-gradient(90deg, #040F16 0%, rgba(4, 15, 22, 0.92) 100%);
+  @include flex-column();
+  gap: 16px;
+.social-item{
+  @include flex-row();
+  gap: 16px;
+  align-items: center;
+  span{
+    color: #FFF;
+    @include font-SegoeUI();
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+  }
+}
+  .social-three{
+    @include flex-row();
+    align-items: center;
+    gap: 16px;
+
+    .social-icons{
+      @include flex-row();
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon{
+      border-radius: 50px;
+      background: #040F16;
+      padding: 11px 16px 13px 16px;
+    }
+    @include media-max(1100px){
+      flex-direction: column;
+      align-items: inherit;
+    }
+  }
+  
+
+}
+
+.form{
+  position: absolute;
+  top: 30%;
+  right: 0;
+  @include responsive-sizing("padding-inline", 8, 56, 360,1440);
+  @include responsive-sizing("padding-block", 28, 56, 360,1440);
+  border-radius: 32px 0px 0px 32px;
+  background: url("../../shared/assests/photo_2024-10-03_13-29-10.jpg") center center no-repeat;
+  background-size: cover;
+  @include flex-column();
+  gap: 32px;
+  @include responsive-sizing("max-width", 360, 530, 360,1440);
+  width: 100%;
+
+  .header{
+    @include flex-column();
+    gap: 32px;
+    h2{
+      color: var(--Rich-black, #040F16);
+      @include font-SegoeUI();
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 48px */
+      letter-spacing: -0.8px;
+    }
+  }
+
+  .form-wrapper{
+    width: 100%;
+    border-radius: 16px;
+    background: #FFF;
+    @include responsive-sizing("padding-inline", 8, 49, 360,1440);
+    @include responsive-sizing("padding-block", 24, 24, 360,1440);
+    @include flex-column();
+    gap: 16px;
+
+    .header{
+      h2{
+        color: #040F16;
+        @include font-SegoeUI();
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 44.8px */
+        letter-spacing: -0.64px;
+      }
+    }
+
+    .form-content{
+      width: 100%;
+      @include flex-column();
+      gap: 8px;
+
+      .inputs{
+        @include flex-column();
+        gap: 8px;
+        width: 100%;
+
+        input{
+          width: 100%;
+        }
+      }
+    }
+
+    .button{
+      width: 100%;
+      background: var(--Rich-black, #040F16);
+      color: #fff;
+
+    }
+
+    .footer{
+      @include flex-row();
+      align-items: center;
+
+      .decor{
+        @include flex-row();
+        gap: 8px;
+      }
+    }
+  }
+
+  @include media-max(1100px){
+    bottom: 0;
+    top: inherit;
+  }
+}

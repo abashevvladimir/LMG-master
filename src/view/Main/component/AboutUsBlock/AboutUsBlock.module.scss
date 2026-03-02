@@ -1,0 +1,74 @@
+.about-us{
+  background-image: url("../../../../shared/assests/photo_2024-10-02_16-39-13.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .wrapper{
+    @include flex-row();
+    gap: 16px;
+    height: 100%;
+    @include responsive-sizing("padding-inline", 8, 120, 360,1440);
+    @include responsive-sizing("padding-block", 40, 200, 360,1440);
+    .header{
+      @include flex-center();
+
+      h2{
+        padding: 32px;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 67.2px */
+        letter-spacing: -1.12px;
+        color: #040F16;
+        max-width: 544px;
+        word-break: break-word;
+        width: 100%;
+        border-radius: var(--Indent_24, 24px);
+        border: 0px solid var(--Persimmon, #38B6FF);
+        background: rgba(255, 255, 255, 0.10);
+        @include media-max(1100px){
+          font-size: 40px;
+        }
+      }
+    }
+    .items{
+      @include flex-column();
+      gap: 16px;
+      .item{
+        @include flex-column();
+        padding: 32px;
+        border-radius: var(--Indent_24, 24px);
+        border: 0px solid var(--Persimmon, #38B6FF);
+        background: rgba(255, 255, 255, 0.10);
+        span{
+          color: var(--Rich-black, #040F16);
+          @include font-SegoeUI();
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 24px */
+          letter-spacing: -0.4px;
+        }
+        h3{
+          color: var(--Rich-black, #040F16);
+          @include font-SegoeUI();
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%; /* 38.4px */
+        }
+      }
+    }
+    @include media-max(1100px){
+      &{
+        @include flex-column();
+        .header{
+          h2{
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

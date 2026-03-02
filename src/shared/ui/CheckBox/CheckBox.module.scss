@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  gap: 14px;
+  width: 100%;
+}
+.check-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+
+  &.dark {
+    & > [data-pc-section="box"] {
+      background: #F2F2F2;
+      border-color: transparent;
+
+      &:focus,
+      &:active {
+        box-shadow: none;
+        border: none;
+      }
+
+      & > [data-pc-section="icon"] {
+        color: #63A38B;
+      }
+    }
+  }
+
+
+  &.light {
+    & > [data-pc-section="box"] {
+      background: #ffffff;
+      border-color: #BDBDBD;
+
+      &:focus,
+      &:active {
+        box-shadow: none;
+        border: none;
+      }
+
+      & > [data-pc-section="icon"] {
+        color: #63A38B;
+      }
+    }
+  }
+}
+.label{
+  color: var(--Rich-black, #040F16);
+  @include font-SegoeUI();
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+
+  a{
+    color: var(--Rich-black, #040F16);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

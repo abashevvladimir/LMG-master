@@ -1,0 +1,176 @@
+@mixin hidden-scrollbar() {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin svg-color($color, $transition-duration: 0ms) {
+    transition: all $transition-duration;
+    fill: $color;
+    path {
+        transition: all $transition-duration;
+        fill: inherit;
+    }
+}
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-row() {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin font-SegoeUI {
+    font-family: "Nunito", sans-serif;
+}
+
+@mixin text-Display1 {
+    --fs: 96;
+    --lh: 112;
+    @include font-SegoeUI();
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 112px;
+}
+@mixin text-Display4 {
+    --fs: 32;
+    --lh: 38.4;
+    @include font-SegoeUI();
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 38.4px */
+}
+@mixin text-Headline1 {
+    --fs: 24;
+    --lh: 28.8;
+    @include font-SegoeUI();
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.48px;
+}
+
+@mixin text-Subtitle1 {
+    --fs: 22;
+    --lh: 28;
+    @include font-SegoeUI();
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+@mixin text-Subtitle2 {
+    --fs: 16;
+    --lh: 24;
+    @include font-SegoeUI();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+@mixin text-Body1 {
+    --fs: 20;
+    --lh: 24;
+    @include font-SegoeUI();
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.4px;
+}
+@mixin text-Body2 {
+    --fs: 16;
+    --lh: 19.2;
+    @include font-SegoeUI();
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0.32px;
+}
+
+@mixin text-Button {
+    --fs: 14;
+    --lh: 20;
+    @include font-SegoeUI();
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.1px;
+}
+@mixin text-ButtonLink {
+    --fs: 18;
+    --lh: 28;
+    @include font-SegoeUI();
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: 0.1px;
+    text-decoration: none;
+}
+@mixin text-ButtonSmall {
+    --fs: 14;
+    --lh: 20;
+    @include font-SegoeUI();
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+@mixin text-Caption {
+    --fs: 12;
+    --lh: 16;
+    @include font-SegoeUI();
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+}
+
+@mixin text-Overline {
+    --fs: 10;
+    --lh: 16;
+    @include font-SegoeUI();
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
+
+@mixin touch-hover($selector) {
+    @at-root {
+        @media (hover: hover) {
+            #{$selector}:hover {
+                @content;
+            }
+        }
+        @media (hover: none) {
+            #{$selector}:active {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin hidden-scrollbar() {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+@mixin responsive-sizing($prop, $min, $max, $minDisplay, $maxDisplay) {
+    $sizeDiff: $max - $min;
+    $displayDiff: $maxDisplay - $minDisplay;
+
+    #{$prop}: clamp(#{$min}px, calc(#{$min}px + ($sizeDiff * (100vw - #{$minDisplay}px) / $displayDiff)), #{$max}px);
+}

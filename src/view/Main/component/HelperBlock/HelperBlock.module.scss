@@ -1,0 +1,100 @@
+.helper-block {
+  border: 0px solid #E5E7EB;
+  background: linear-gradient(179deg, #DEDEDE 19.58%, #CAC8CA 39.27%, #E4E4E5 53.81%, #E2E2E3 62.13%, #E6E6E7 73.36%, #E7E7E8 76.57%, #EDEEEE 84.63%, #E5E6E6 93.21%);
+    .wrapper {
+        @include responsive-sizing("padding-inline", 8, 120, 360,1440);
+        @include responsive-sizing("padding-block", 40, 80, 360,1440);
+        @include flex-column;
+        gap: 24px;
+
+      h2{
+        color: var(--Rich-black, #040F16);
+        @include font-SegoeUI();
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 38.4px */
+      }
+    }
+}
+.top{
+  @include flex-column;
+  gap: 24px;
+  @include responsive-sizing("padding-bottom", 40, 80, 360,1440);
+  .title{
+    @include text-Display4;
+  }
+  .cards{
+    @include flex-row;
+    gap: 24px;
+
+    & >div{
+      flex: 0 1 33.3333%;
+      height: 100%;
+    }
+    & >div:nth-child(2n){
+      margin-top: 20px;
+    }
+    @include media-max(1100px){
+      &{
+        @include flex-column();
+      }
+    }
+
+    .card{
+      height: 325px;
+    }
+  }
+
+
+}
+
+.bottom{
+  @include responsive-sizing("padding-top", 40, 80, 360,1440);
+  @include flex-column;
+  gap: 24px;
+  .title{
+    @include text-Display4;
+  }
+  .cards{
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    .card{
+      padding: 8px 8px 8px 16px;
+      flex: 1 1 48%;
+      height: 100%;
+      border-radius: var(--Indent_32, 32px);
+      border: 1px solid rgba(4, 15, 22, 0.20);
+      background: rgba(232, 236, 250, 0.12);
+      backdrop-filter: blur(8px);
+      @include flex-row;
+      align-items: center;
+      justify-content: space-between;
+
+      span{
+        @include text-Headline1;
+        color: #040F16;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .icon-wrapper{
+        border-radius: var(--Indent_32, 32px);
+        background: var(--Seasalt, #F6F6F6);
+        height: 100px;
+        width: 100px;
+        flex: 0 0 auto;
+        @include flex-center;
+        cursor: pointer;
+      }
+
+      .icon{
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

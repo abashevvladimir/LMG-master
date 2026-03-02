@@ -1,0 +1,23 @@
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+.logo{
+  cursor: pointer;
+
+  &.isMobile{
+    width: 15px;
+    height: 15px;
+
+  }
+  .image{
+    width: 285px;
+    height: 20px;
+
+    &.isMobile{
+      width: 15px;
+      height: 15px;
+
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.main-block{
+  background: url("../../../../shared/assests/LMG.png") no-repeat;
+  background-size: cover;
+  height: 764px;
+}
+.wrapper{
+  height: 100%;
+  padding-block: 0;
+  @include responsive-sizing("padding-inline", 8, 120, 360, 1440);
+}
+.content{
+  @include flex-column();
+  justify-content: center;
+  gap: 16px;
+  height: 81%;
+  max-width: 616px;
+  width: 100%;
+  h1{
+    color: #2A2E37;
+    @include font-SegoeUI();
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 120% */
+  }
+  .description{
+    @include flex-column();
+
+    span{
+      @include text-Body1();
+      color: #2A2E37;
+      font-weight: 400;
+    }
+  }
+
+  .button{
+    background: var(--Brand-Dark-Guidance-Primary-Dark-Primary-Container, #566DD6);
+    transition: $transition-fast;
+    span{
+      color: #FFFFFF;
+    }
+    &:hover{
+      background: var(--Brand-Dark-Guidance-Primary-Dark-Primary-Container, #6A6ACF);
+    }
+  }
+}
+
+.buttons{
+  @include flex-row();
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .button{
+    padding: 16px 14px;
+    border-radius: 50px;
+    border: 1px solid var(--Brand-Light-Guidance-Primary-Light-Primary, #566DD6);
+    transition: $transition-fast;
+
+    &:hover{
+      background: var(--Brand-Dark-Guidance-Primary-Dark-Primary-Container, #6A6ACF);
+    }
+  }
+}
