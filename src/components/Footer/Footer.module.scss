@@ -30,14 +30,14 @@
     .contacts{
       @include flex-column();
       gap: 8px;
-      .phone, .email, .address{
+      .phone, .email, .address, .details, .legal-name{
         color: #FFFFFF;
         text-decoration: none;
       }
       .phone {
         @include text-Body1();
       }
-      .email, .address{
+      .email, .address, .details, .legal-name{
         @include text-Body2();
       }
     }

@@ -43,7 +43,9 @@ export const Footer = ({ data }: Props) => {
                             <Link className={cx("email")} href="mailto:sales@liftmg.ru" target="_blank">
                                 sales@liftmg.ru
                             </Link>
-                            <h3 className={cx("address")}>Ленинский проспект, 153, Санкт-Петербург</h3>
+                            <h3 className={cx("legal-name")}>ООО «Тренд Медиа»</h3>
+                            <h3 className={cx("details")}>ИНН 7810703396, ОГРН 1177847274110</h3>
+                            <h3 className={cx("address")}>196247, г. Санкт-Петербург, пр-кт Ленинский, д.153, лит. А, офис 646</h3>
                         </div>
                     </div>
                     <div className={cx("menu-wrapper")}>
@@ -70,7 +72,7 @@ export const Footer = ({ data }: Props) => {
                 </div>
                 <div className={cx("line")} />
                 <div className={cx("copyright")}>
-                    <span>levsha-web.ru © Все права защищены. 2024</span>
+                    <span>levsha-web.ru © Все права защищены. {new Date().getFullYear()}</span>
                     <Link href={Routes.POLICY}>Политика конфиденциальности</Link>
                 </div>
             </div>
