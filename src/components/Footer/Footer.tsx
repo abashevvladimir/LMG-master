@@ -72,6 +72,7 @@ export const Footer = ({ data }: Props) => {
                 </div>
                 <div className={cx("line")} />
                 <div className={cx("copyright")}>
+
                     <span>levsha-web.ru © Все права защищены. {new Date().getFullYear()}</span>
                     <Link href={Routes.POLICY}>Политика конфиденциальности</Link>
                 </div>
