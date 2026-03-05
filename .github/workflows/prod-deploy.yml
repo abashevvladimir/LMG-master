@@ -2,6 +2,8 @@ name: Production Deploy to Server
 
 on:
   push:
+    branches:
+      - master
   workflow_dispatch:  # Позволяет запустить кнопкой
 jobs:
   test:
