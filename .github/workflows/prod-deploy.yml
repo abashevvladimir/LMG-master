@@ -2,7 +2,8 @@ name: Production Deploy to Server
 
 on:
   push:
-  workflow_dispatch:  # Позволяет запустить кнопкой
+    branches:
+      - master
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -67,7 +68,7 @@ jobs:
   
     - name: SSH into server and deploy
       run: |
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_ADDRESS }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_ADDRESS }} << EOF
 
         REPOSITORY_NAME_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         REPOSITORY_BASE_NAME=$(echo "$REPOSITORY_NAME_LOWER" | cut -d'/' -f2)
